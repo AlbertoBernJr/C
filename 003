@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+void decToBinary(int number)
+{
+    int i = 0;
+    int binary [1000]; //array para conter o resto
+    while(number>0)
+    {
+         binary[i] = number%2; //incluindo o resto dentro do array
+        number = number/2;
+        i++;
+    }
+    for(int j=i-1; j>=0; j--) //invertendo a ordem do array para ler da direita para a esquerda
+        printf("%d", binary[j]);
+}
+
+int main()
+{
+    int number;
+    printf("Numero em decimal:");
+    scanf("%d", &number);
+    decToBinary(number);
+    return 0;
+}
